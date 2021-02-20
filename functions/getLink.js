@@ -3,24 +3,17 @@ const axios = require('axios')
 
 require('dotenv').config()
 
+const { GET_LINKS } = require('./utils/linkQueries')
+
+const sendQuery = require('./utils/sendQuery')
+
 exports.handler = async (event) => {
 
-const GET_LINKS = `
-
-    query {
-        allLinks{
-            data{
-                _id
-                name
-                url
-                description
-            }
-        }
-    }
-
-`
-const {data : {data}} = await axios({
+try {
     
-})
+} catch (error) {
+    
+}
+
 
 }
