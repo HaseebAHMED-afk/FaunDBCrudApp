@@ -10,7 +10,7 @@ function App() {
   const loadLinks = async () =>{
 
     try {
-      const res = await fetch('/api/getLink');
+      const res = await fetch('/.netlify/functions/getLink');
     const links = await res.json()
     setLinks(links)     
     } catch (error) {

@@ -19,7 +19,7 @@ const LinkForm = ({refreshLinks}) => {
 
     try {
         // eslint-disable-next-line
-        const res = await fetch('/api/createLink' , {
+        const res = await fetch('/.netlify/functions/createLink' , {
             method: 'POST',
             body: JSON.stringify(body)
         })
