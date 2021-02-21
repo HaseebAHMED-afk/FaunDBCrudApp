@@ -1,0 +1,22 @@
+.link-card{
+    width: 30%;
+    margin: 25px auto;
+    background-color: white;
+    text-align: left;
+    border-radius: 5px;
+}
+.link-name,.link-id,.link-url,.link-desc{
+    margin: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.link-id{
+    color: gray;
+    text-decoration: none;
+}
+.link-desc{
+    overflow-wrap: break-word;
+}
+
+.btn{
+    margin: 5px !important;
+}

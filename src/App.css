@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1403a8;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+}
+
+.App{
+    text-align: center;
+}
+
+.main-heading,.second-heading{
+    margin: 50px auto;
+    font-family: 'Roboto' , 'sans-serif';
+    color: white;
+}
+
+.second-heading{
+    margin: 25px;
+}
+
+:-ms-input-placeholder{
+    color: white;
+}
+.label{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.text-field{
+    width: 30%;
+    height: 30px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.text-field:focus{
+    outline: none;
+}
+

@@ -7,6 +7,7 @@ const GET_LINKS = `
                 name
                 url
                 description
+                archived
             }
         }
     }
