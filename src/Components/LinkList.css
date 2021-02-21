@@ -20,3 +20,8 @@
 .btn{
     margin: 5px !important;
 }
+.second-heading{
+    margin: 50px auto;
+    font-family: 'Roboto' , 'sans-serif';
+    color: white;
+}

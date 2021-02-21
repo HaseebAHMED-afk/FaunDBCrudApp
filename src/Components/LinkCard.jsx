@@ -5,30 +5,36 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import './LinkList.css'
 
 
-const LinkCard = ({ link }) => {
-//   const archiveLink = async (link) => {
-//     link.archived = true;
-//     try {
-//       await fetch("/api/updateLink", {
-//         method: "PUT",
-//         body: JSON.stringify(link),
-//       });
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
+const LinkCard = ({ link,refreshLinks }) => {
 
-//   const deleteLink = async (link) => {
-//     linkId = link._id;
-//     try {
-//       await fetch("/api/deleteLink", {
-//         method: "DELETE",
-//         body: JSON.stringify({ linkId }),
-//       });
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
+
+  const archiveLink = async () => {
+    link.archived = true;
+    try {
+      await fetch("/api/updateLink", {
+        method: "PUT",
+        body: JSON.stringify(link),
+      });
+      refreshLinks();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const deleteLink = async () => {
+
+    const id=link._id
+
+    try {
+      await fetch("/api/deleteLink", {
+        method: "DELETE",
+        body: JSON.stringify({ id }),
+      });
+      refreshLinks();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div  className="link-card">
@@ -39,6 +45,7 @@ const LinkCard = ({ link }) => {
       </a>
       <p className="link-desc">{link.description}</p>
       <Button
+        onClick={deleteLink}
         className="btn"
         variant="contained"
         color="secondary"
@@ -47,6 +54,7 @@ const LinkCard = ({ link }) => {
         Delete
       </Button>
       <Button
+        onClick={archiveLink}
         className="btn"
         variant="contained"
         color="primary"

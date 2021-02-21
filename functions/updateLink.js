@@ -16,9 +16,9 @@ exports.handler = async (event) => {
         return formatResponse(405 , 'Method not supported')
     }
 
-    const { name , url , description, _id:id , archived } = JSON.parse(event.body)
+    const { name , url , description, _id:id ,archived} = JSON.parse(event.body)
 
-    const variables = {name , url , description, id  , archived : false}
+    const variables = {name , url , description, id  , archived }
 
 try {
     
