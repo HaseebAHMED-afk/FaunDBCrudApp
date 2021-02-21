@@ -3,7 +3,7 @@ const axios = require('axios')
 
 require('dotenv').config()
 
-const { GET_LINKS } = require('./utils/linkQueries')
+const { DELETE_LINK } = require('./utils/linkQueries')
 
 const sendQuery = require('./utils/sendQuery')
 
@@ -11,17 +11,21 @@ const formatResponse = require('./utils/formatResponse')
 
 exports.handler = async (event) => {
 
-    if(event.httpMethod !== 'GET'){
+
+    if(event.httpMethod !== 'DELETE'){
         return formatResponse(405 , 'Method not supported')
     }
 
+
+    const { id } = JSON.parse(event.body)
+
+    const variables = {id}
+
 try {
     
-    const response = await sendQuery(GET_LINKS)
+    const {deleteLink : deletedLink} = await sendQuery(DELETE_LINK , variables)
 
-    const data = response.allLinks.data;
-
-    return formatResponse(200 , data)
+    return formatResponse(200 , deletedLink)
 
 } catch (error) {
     console.log(error);
